@@ -1,6 +1,6 @@
 # SPICE
 SPICE stands for **S**iLA **P**rovider **I**mplementation **C**ommunity **E**quipment.
-![SPICE Logo](/SPICE Logos/SPICE_064.png)
+![SPICE Logo](/SPICE_Logos/SPICE_064.png)
 
 Idea is to have a public open source available base for a SiLA ServiceProvider to simplify the entrance to the SiLA World / SiLA Device integration for device manufacturer. And if the interest is high enough there will also be the power in future to enhance SPICE and adapt to changed SiLA DCDIS / DCIS versions.
 
