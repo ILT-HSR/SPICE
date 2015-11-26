@@ -6,7 +6,7 @@ SiLA is the emerging vendor-independent global standard to connect laboratory eq
 SPICE is a publicly available, open source software base to create your own "SiLA Service Provider". With SPICE it is easy to make your own instrument SiLA compatible with a SiLA interface!
 SPICE can also be used as "SiLA Converter" to equip legacy devices with a SiLA interface.
 
-An implementation based on SPICE is called a SPI (**S**iLA **P**rovider **I**mplementation), such as the **SPI_Multidrop**, which is also available and open source within this repository.
+An implementation based on SPICE is called a SPI (**S**iLA **P**rovider **I**mplementation), such as the *SPI_Multidrop*, which is also available and open source within this repository.
 
 SPICE was developed by the *ILT Institute for Lab Automation and Mechatronics* in Rapperswil (Switzerland). It was commissioned by *Actelion Pharmaceuticals Ltd.* in Allschwil (Switzerland), and it is made freely available to the lab automation community through GitHub.
 
