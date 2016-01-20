@@ -1,0 +1,7 @@
+SPICE Changelog
+
+--- 1.0.1 ---
+- BugFix - Faulty SOAP-Action at error-events. (Namespace missing)
+
+--- 1.0.0 ---
+- Release after restructuring

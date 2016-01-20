@@ -1,0 +1,7 @@
+SPI_Multidrop Changelog
+
+--- 2.0.1 ---
+- Update SPICE from 1.0.0 to 1.0.1
+
+--- 2.0.0 ---
+- Release after SPICE restructuring
