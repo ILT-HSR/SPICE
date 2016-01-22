@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificCommandBase.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificCore.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificCoreContainer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceProvider.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificInit.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificReset.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificSetParameters.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="SPITemplate.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMinimum.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandWithParameter.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandWithResponseData.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandWithParallelExecution.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandWithSpecificSimulation.cpp">
+      <Filter>Quelldateien\Commands</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificCommandBase.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificCore.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificCoreContainer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceProvider.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificInit.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificReset.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificSetParameters.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMinimum.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandWithParameter.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandWithResponseData.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandWithParallelExecution.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandWithSpecificSimulation.h">
+      <Filter>Headerdateien\Commands</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{63354736-359d-4f28-8e82-fed63933a4fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{3800264d-a1b1-4ee6-9770-bafdd052f4f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Commands">
+      <UniqueIdentifier>{9cb37a68-5ebb-4794-87a9-4d92cf57e225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Commands">
+      <UniqueIdentifier>{a3e07d77-af8c-49f2-92f7-94b30903c436}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

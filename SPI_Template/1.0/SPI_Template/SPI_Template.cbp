@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SPI_Template" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SPI_Templated" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-g" />
+					<Add option="-lpthread" />
+					<Add option="-DLINUX" />
+					<Add option="-DSILACONVERTER_BUILD" />
+					<Add directory="../../SPICE/SPICE_BIG" />
+					<Add directory="../../SPICE/SPICE_Core" />
+					<Add directory="../../SPICE/SPICE_ES_POCO" />
+					<Add directory="../../SPICE/SPICE_XML_POCO" />
+				</Compiler>
+				<Linker>
+					<Add library="../../SPICE/SPICE_Core/libSPICE_Cored.a" />
+					<Add library="../../SPICE/SPICE_ES_POCO/libSPICE_ES_POCOd.a" />
+					<Add library="../../SPICE/SPICE_XML_POCO/libSPICE_XML_POCOd.a" />
+					<Add library="../../SPICE/SPICE_BIG/libSPICE_BIGd.a" />
+					<Add library="/usr/local/lib/libPocoFoundationd.so" />
+					<Add library="/usr/local/lib/libPocoNetd.so" />
+					<Add library="/usr/local/lib/libPocoXMLd.so" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SPI_Template" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++0x" />
+					<Add option="-lpthread" />
+					<Add option="-DLINUX" />
+					<Add option="-DSILACONVERTER_BUILD" />
+					<Add directory="../../SPICE/SPICE_BIG" />
+					<Add directory="../../SPICE/SPICE_Core" />
+					<Add directory="../../SPICE/SPICE_ES_POCO" />
+					<Add directory="../../SPICE/SPICE_XML_POCO" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="../../SPICE/SPICE_Core/libSPICE_Core.a" />
+					<Add library="../../SPICE/SPICE_ES_POCO/libSPICE_ES_POCO.a" />
+					<Add library="../../SPICE/SPICE_XML_POCO/libSPICE_XML_POCO.a" />
+					<Add library="../../SPICE/SPICE_BIG/libSPICE_BIG.a" />
+					<Add library="/usr/local/lib/libPocoFoundation.so" />
+					<Add library="/usr/local/lib/libPocoNet.so" />
+					<Add library="/usr/local/lib/libPocoXML.so" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="CommandMinimum.cpp" />
+		<Unit filename="CommandMinimum.h" />
+		<Unit filename="CommandWithParallelExecution.cpp" />
+		<Unit filename="CommandWithParallelExecution.h" />
+		<Unit filename="CommandWithParameter.cpp" />
+		<Unit filename="CommandWithParameter.h" />
+		<Unit filename="CommandWithResponseData.cpp" />
+		<Unit filename="CommandWithResponseData.h" />
+		<Unit filename="CommandWithSpecificSimulation.cpp" />
+		<Unit filename="CommandWithSpecificSimulation.h" />
+		<Unit filename="ResourceProvider.cpp" />
+		<Unit filename="ResourceProvider.h" />
+		<Unit filename="SPITemplate.cpp" />
+		<Unit filename="SpecificCommandBase.cpp" />
+		<Unit filename="SpecificCommandBase.h" />
+		<Unit filename="SpecificCore.cpp" />
+		<Unit filename="SpecificCore.h" />
+		<Unit filename="SpecificCoreContainer.cpp" />
+		<Unit filename="SpecificCoreContainer.h" />
+		<Unit filename="SpecificInit.cpp" />
+		<Unit filename="SpecificInit.h" />
+		<Unit filename="SpecificReset.cpp" />
+		<Unit filename="SpecificReset.h" />
+		<Unit filename="SpecificSetParameters.cpp" />
+		<Unit filename="SpecificSetParameters.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
