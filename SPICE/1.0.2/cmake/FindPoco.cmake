@@ -1,3 +1,7 @@
+# This file has been copied from
+# https://github.com/astahl/poco-cmake/blob/master/cmake/FindPoco.cmake
+# Thank you to Andreas Stahl for creating this file
+#
 # - finds the Poco C++ libraries
 # This module finds the Applied Informatics Poco libraries.
 # It supports the following components:
