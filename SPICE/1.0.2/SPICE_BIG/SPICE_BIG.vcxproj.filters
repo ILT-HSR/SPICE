@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Interfaces">
+      <UniqueIdentifier>{caf2487a-80b0-41a4-8398-4cc94f782d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Generals">
+      <UniqueIdentifier>{a63e07d6-7dba-49c5-a217-fac5d8e91629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Bases">
+      <UniqueIdentifier>{510f38ed-af03-4a30-b6f1-e25de38ec2f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Generals">
+      <UniqueIdentifier>{ab895cdd-d346-4f67-9296-ecffc222c1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Bases">
+      <UniqueIdentifier>{03152683-89d7-41e2-aeb4-778eaa5e283d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Generals\DataEntryTypes">
+      <UniqueIdentifier>{de289964-6e19-413a-8e92-096327684e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Generals\DataEntryTypes">
+      <UniqueIdentifier>{f015fba1-1259-4e74-acd3-bea9002b6cc7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ICommandCallback.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IResourceProvider.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IEthernetServer.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IEthernetConnectionCallback.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IEthernetEventConnectionFactory.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IEthernetEventConnection.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandError.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="ContinuationTask.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSet.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntry.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryInt.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandBase.h">
+      <Filter>Headerdateien\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryLong.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryShort.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryByte.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryUnsignedLong.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryUnsignedInt.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryUnsignedShort.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryUnsignedByte.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryFloat.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryDouble.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryBool.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryString.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataEntryDuration.h">
+      <Filter>Headerdateien\Generals\DataEntryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificResetBase.h">
+      <Filter>Headerdateien\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="IXMLParser.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="SiLASOAPFunctions.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="IWSDiscoveryCallback.h">
+      <Filter>Headerdateien\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralFunctions.h">
+      <Filter>Headerdateien\Generals</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificBase.h">
+      <Filter>Headerdateien\Bases</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommandBase.cpp">
+      <Filter>Quelldateien\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSet.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntry.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandError.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="ContinuationTask.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryInt.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryBool.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryByte.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryDouble.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryDuration.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryFloat.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryLong.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryShort.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryString.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryUnsignedByte.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryUnsignedInt.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryUnsignedLong.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="DataEntryUnsignedShort.cpp">
+      <Filter>Quelldateien\Generals\DataEntryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificResetBase.cpp">
+      <Filter>Quelldateien\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="SiLASOAPFunctions.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralFunctions.cpp">
+      <Filter>Quelldateien\Generals</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificBase.cpp">
+      <Filter>Quelldateien\Bases</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

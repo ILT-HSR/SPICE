@@ -1,5 +1,8 @@
 SPICE Changelog
 
+--- 1.0.2 --- 2016_01_29
+- Refine - Change version information from SiLAConverter to general SPICE-version (not every SPICE / SPI_Implementation is a SiLAconverter)
+
 --- 1.0.1 --- 2016_01_20
 - BugFix - Faulty SOAP-Action at error-events. (Namespace missing)
 
