@@ -10,6 +10,7 @@
 #include "EventConnection.h"
 
 #include <sstream>
+#include <system_error>
 
 #include "Poco/URI.h"
 #include "Poco/Timespan.h"

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_workspace_file>
-	<Workspace title="Workspace">
-		<Project filename="SPICE_BIG/SPICE_BIG.cbp" active="1" />
-		<Project filename="SPICE_Core/SPICE_Core.cbp" />
-		<Project filename="SPICE_ES_POCO/SPICE_ES_POCO.cbp" />
-		<Project filename="SPICE_XML_POCO/SPICE_XML_POCO.cbp" />
-	</Workspace>
-</CodeBlocks_workspace_file>
