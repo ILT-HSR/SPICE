@@ -4,7 +4,7 @@
 	Purpose: Class as central coordinator of incoming, waiting, active and ending commands
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_01_20
 */
 
 #include "CommandHandler.h"
@@ -458,7 +458,7 @@ namespace SPICE
 					strout << "<" << silaNSPrefix << "DeviceManufacturer>ILT / " << deviceManufacturer << "</" << silaNSPrefix << "DeviceManufacturer>";
 					strout << "<" << silaNSPrefix << "DeviceName>SiLAConverter v2 / " << deviceName << "</" << silaNSPrefix << "DeviceName>";
 					strout << "<" << silaNSPrefix << "DeviceSerialNumber>" << _coreData->getSerialNumber() << " / " << deviceSerialNumber << "</" << silaNSPrefix << "DeviceSerialNumber>";
-					strout << "<" << silaNSPrefix << "DeviceFirmwareVersion>v2.0 - 20151029 / " << deviceFirmwareVersion << "</" << silaNSPrefix << "DeviceFirmwareVersion>";
+					strout << "<" << silaNSPrefix << "DeviceFirmwareVersion>v2.0.1 - 20160120 / " << deviceFirmwareVersion << "</" << silaNSPrefix << "DeviceFirmwareVersion>";
 				}
 				else
 				{

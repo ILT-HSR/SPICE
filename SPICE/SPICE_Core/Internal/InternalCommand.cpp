@@ -4,7 +4,7 @@
 	Purpose: Class for core internal handling of a command
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_01_20
 */
 
 #include "InternalCommand.h"
@@ -309,8 +309,7 @@ namespace SPICE
 
 						std::string sendXMLEvent = getXMLErrorEvent(1000, processingError->getErrorMessage(), processingError->getXMLContinuationTaskParameter());
 						std::shared_ptr<SPICE::BIG::IEthernetEventConnection> eventConnection = _communicationInformations->getEventConnectionFactory()->getNewEthernetEventConnection();
-						eventConnection->setEventInformations(_commandHandlerCallback->getCoreData()->getSessionData()->getEventReceiverURI(), sendXMLEvent, "ErrorEvent");
-//						std::shared_ptr<Internal::Communication::EventConnection> eventConnection(new Internal::Communication::EventConnection(_coreData->eventManager.GetEventReceiverURI(), "ErrorEvent", sendXMLEvent, soapActionPrefix));
+						eventConnection->setEventInformations(_commandHandlerCallback->getCoreData()->getSessionData()->getEventReceiverURI(), sendXMLEvent, _communicationInformations->getSiLANamespace() + "/ErrorEvent");
 						eventConnection->start();
 
 						bool stillWaiting = true;
