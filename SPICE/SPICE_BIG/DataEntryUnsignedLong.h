@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type unsigned long integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYUNSIGNEDLONG_H
 #define DATAENTRYUNSIGNEDLONG_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type unsigned long integer
+					DataEntry of type uint64_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryUnsignedLong(std::string name);
 				/**
-					DataEntry of type unsigned long integer
+					DataEntry of type uint64_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryUnsignedLong(std::string name, unsigned long minValue, unsigned long maxValue);
+				DataEntryUnsignedLong(std::string name, uint64_t minValue, uint64_t maxValue);
 				/**
-					DataEntry of type unsigned long integer
+					DataEntry of type uint64_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryUnsignedLong(std::string name, unsigned long value);
+				DataEntryUnsignedLong(std::string name, uint64_t value);
 				virtual ~DataEntryUnsignedLong();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(unsigned long value);
+				bool setValue(uint64_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				unsigned long getValue();
+				uint64_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				unsigned long _minValue;
-				unsigned long _maxValue;
+				uint64_t _minValue;
+				uint64_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

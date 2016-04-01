@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type short
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYSHORT_H
 #define DATAENTRYSHORT_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type short integer
+					DataEntry of type int16_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryShort(std::string name);
 				/**
-					DataEntry of type short integer
+					DataEntry of type int16_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryShort(std::string name, short minValue, short maxValue);
+				DataEntryShort(std::string name, int16_t minValue, int16_t maxValue);
 				/**
-					DataEntry of type short integer
+					DataEntry of type int16_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryShort(std::string name, short value);
+				DataEntryShort(std::string name, int16_t value);
 				virtual ~DataEntryShort();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(short value);
+				bool setValue(int16_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				short getValue();
+				int16_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				short _minValue;
-				short _maxValue;
+				int16_t _minValue;
+				int16_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

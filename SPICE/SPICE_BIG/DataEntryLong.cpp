@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type long integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryLong.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryLong::DataEntryLong(std::string name, long minValue, long maxValue) : DataEntry(name),
+			DataEntryLong::DataEntryLong(std::string name, int64_t minValue, int64_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryLong::DataEntryLong(std::string name, long value) : DataEntry(name),
+			DataEntryLong::DataEntryLong(std::string name, int64_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryLong::setValue(long value)
+			bool DataEntryLong::setValue(int64_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			long DataEntryLong::getValue()
+			int64_t DataEntryLong::getValue()
 			{
-				return std::stol(_value);
+				return std::stoll(_value);
 			}
 			DataEntry::Types DataEntryLong::getDataEntryType()
 			{
@@ -88,7 +88,7 @@ namespace SPICE
 				bool returnValue = true;
 				try
 				{
-					long tempValue = std::stol(valueString);
+					int64_t tempValue = std::stoll(valueString);
 					if(_minMaxSetted)
 					{
 						if(tempValue < _minValue || tempValue > _maxValue)

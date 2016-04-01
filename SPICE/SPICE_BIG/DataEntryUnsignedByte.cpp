@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type unsigned char / unsigned byte
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryUnsignedByte.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedByte::DataEntryUnsignedByte(std::string name, unsigned char minValue, unsigned char maxValue) : DataEntry(name),
+			DataEntryUnsignedByte::DataEntryUnsignedByte(std::string name, uint8_t minValue, uint8_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedByte::DataEntryUnsignedByte(std::string name, unsigned char value) : DataEntry(name),
+			DataEntryUnsignedByte::DataEntryUnsignedByte(std::string name, uint8_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryUnsignedByte::setValue(unsigned char value)
+			bool DataEntryUnsignedByte::setValue(uint8_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			unsigned char DataEntryUnsignedByte::getValue()
+			uint8_t DataEntryUnsignedByte::getValue()
 			{
-				return (unsigned char)std::stoul(_value);
+				return (uint8_t)std::stoul(_value);
 			}
 			DataEntry::Types DataEntryUnsignedByte::getDataEntryType()
 			{
@@ -89,14 +89,14 @@ namespace SPICE
 				try
 				{
 					unsigned long tempValueULong = std::stoul(valueString);
-					unsigned char tempValue = 0;
+					uint8_t tempValue = 0;
 					if(tempValueULong > 255)
 					{
 						returnValue = false;
 					}
 					else
 					{
-						tempValue = (unsigned char)tempValueULong;
+						tempValue = (uint8_t)tempValueULong;
 					}
 					if(_minMaxSetted && returnValue)
 					{

@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type unsigned char / unsigned byte
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYUNSIGNEDBYTE_H
 #define DATAENTRYUNSIGNEDBYTE_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type unsigned char / unsigned byte
+					DataEntry of type uint8_t / unsigned byte
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryUnsignedByte(std::string name);
 				/**
-					DataEntry of type unsigned char / unsigned byte
+					DataEntry of type uint8_t / unsigned byte
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryUnsignedByte(std::string name, unsigned char minValue, unsigned char maxValue);
+				DataEntryUnsignedByte(std::string name, uint8_t minValue, uint8_t maxValue);
 				/**
-					DataEntry of type unsigned char / unsigned byte
+					DataEntry of type uint8_t / unsigned byte
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryUnsignedByte(std::string name, unsigned char value);
+				DataEntryUnsignedByte(std::string name, uint8_t value);
 				virtual ~DataEntryUnsignedByte();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(unsigned char value);
+				bool setValue(uint8_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				unsigned char getValue();
+				uint8_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				unsigned char _minValue;
-				unsigned char _maxValue;
+				uint8_t _minValue;
+				uint8_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

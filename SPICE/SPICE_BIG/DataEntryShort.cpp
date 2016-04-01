@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type short
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryShort.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryShort::DataEntryShort(std::string name, short minValue, short maxValue) : DataEntry(name),
+			DataEntryShort::DataEntryShort(std::string name, int16_t minValue, int16_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryShort::DataEntryShort(std::string name, short value) : DataEntry(name),
+			DataEntryShort::DataEntryShort(std::string name, int16_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryShort::setValue(short value)
+			bool DataEntryShort::setValue(int16_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			short DataEntryShort::getValue()
+			int16_t DataEntryShort::getValue()
 			{
-				return (short)std::stoi(_value);
+				return (int16_t)std::stoi(_value);
 			}
 			DataEntry::Types DataEntryShort::getDataEntryType()
 			{
@@ -89,14 +89,14 @@ namespace SPICE
 				try
 				{
 					int tempValueInt = std::stoi(valueString);
-					short tempValue = 0;
+					int16_t tempValue = 0;
 					if(tempValueInt < -32768 || tempValueInt > 32767)
 					{
 						returnValue = false;
 					}
 					else
 					{
-						tempValue = (short)tempValueInt;
+						tempValue = (int16_t)tempValueInt;
 					}
 					if(_minMaxSetted && returnValue)
 					{

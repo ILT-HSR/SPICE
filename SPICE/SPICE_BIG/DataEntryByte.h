@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type char / byte
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYBYTE_H
 #define DATAENTRYBYTE_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type char / byte
+					DataEntry of type int8_t / byte
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryByte(std::string name);
 				/**
-					DataEntry of type char / byte
+					DataEntry of type int8_t / byte
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryByte(std::string name, char minValue, char maxValue);
+				DataEntryByte(std::string name, int8_t minValue, int8_t);
 				/**
-					DataEntry of type char / byte
+					DataEntry of type int8_t / byte
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryByte(std::string name, char value);
+				DataEntryByte(std::string name, int8_t);
 				virtual ~DataEntryByte();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(char value);
+				bool setValue(int8_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				char getValue();
+				int8_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				char _minValue;
-				char _maxValue;
+				int8_t _minValue;
+				int8_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

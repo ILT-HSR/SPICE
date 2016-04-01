@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type unsigned integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryUnsignedInt.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedInt::DataEntryUnsignedInt(std::string name, unsigned int minValue, unsigned int maxValue) : DataEntry(name),
+			DataEntryUnsignedInt::DataEntryUnsignedInt(std::string name, uint32_t minValue, uint32_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedInt::DataEntryUnsignedInt(std::string name, unsigned int value) : DataEntry(name),
+			DataEntryUnsignedInt::DataEntryUnsignedInt(std::string name, uint32_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryUnsignedInt::setValue(unsigned int value)
+			bool DataEntryUnsignedInt::setValue(uint32_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			unsigned int DataEntryUnsignedInt::getValue()
+			uint32_t DataEntryUnsignedInt::getValue()
 			{
-				return (unsigned int)std::stoul(_value);
+				return (uint32_t)std::stoul(_value);
 			}
 			DataEntry::Types DataEntryUnsignedInt::getDataEntryType()
 			{
@@ -89,14 +89,14 @@ namespace SPICE
 				try
 				{
 					unsigned long tempValueULong = std::stoul(valueString);
-					unsigned int tempValue = 0;
+					uint32_t tempValue = 0;
 					if(tempValueULong > 4294967295U)
 					{
 						returnValue = false;
 					}
 					else
 					{
-						tempValue = (unsigned int)tempValueULong;
+						tempValue = (uint32_t)tempValueULong;
 					}
 					if(_minMaxSetted && returnValue)
 					{

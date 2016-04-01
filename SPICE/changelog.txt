@@ -1,5 +1,9 @@
 SPICE Changelog
 
+--- next release ---
+- BugFix - Fixing int64 and uint64 data types (change all DateEntry-Int-Types to _t)
+- BugFix - Duration has to be defined as XML-String in WSDL (Definition of SiLA 1.3.08), not TimeSpan.
+
 --- 1.0.2 --- 2016_01_29
 - Refine - Change version information from SiLAConverter to general SPICE-version (not every SPICE / SPI_Implementation is a SiLAconverter)
 - Added - CMake support for MinGW (thanks to githubuser0xFFFF)

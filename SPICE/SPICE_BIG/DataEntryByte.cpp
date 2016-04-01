@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type char / byte
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryByte.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryByte::DataEntryByte(std::string name, char minValue, char maxValue) : DataEntry(name),
+			DataEntryByte::DataEntryByte(std::string name, int8_t minValue, int8_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryByte::DataEntryByte(std::string name, char value) : DataEntry(name),
+			DataEntryByte::DataEntryByte(std::string name, int8_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryByte::setValue(char value)
+			bool DataEntryByte::setValue(int8_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			char DataEntryByte::getValue()
+			int8_t DataEntryByte::getValue()
 			{
-				return (char)std::stoi(_value);
+				return (int8_t)std::stoi(_value);
 			}
 			DataEntry::Types DataEntryByte::getDataEntryType()
 			{
@@ -89,14 +89,14 @@ namespace SPICE
 				try
 				{
 					int tempValueInt = std::stoi(valueString);
-					char tempValue = 0;
+					int8_t tempValue = 0;
 					if(tempValueInt < -128 || tempValueInt > 127)
 					{
 						returnValue = false;
 					}
 					else
 					{
-						tempValue = (char)tempValueInt;
+						tempValue = (int8_t)tempValueInt;
 					}
 					if(_minMaxSetted && returnValue)
 					{

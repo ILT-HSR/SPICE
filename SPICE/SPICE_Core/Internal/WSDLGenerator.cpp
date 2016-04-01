@@ -4,7 +4,7 @@
 	Purpose: Class to generate a WSDL file
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "WSDLGenerator.h"
@@ -403,7 +403,7 @@ namespace SPICE
 					return "xsd:dateTime";
 					break;
 				case SPICE::BIG::DataEntry::Types::Duration :
-					return "xsd:duration";
+					return "xsd:string";
 					break;
 //				case SPICE::BIG::DataEntry::Types::array :
 //					throw new std::exception("Implement: DataEntry array generate correct xsd-Type");

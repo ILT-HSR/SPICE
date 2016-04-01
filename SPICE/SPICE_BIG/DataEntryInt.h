@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYINT_H
 #define DATAENTRYINT_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type integer
+					DataEntry of type int32_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryInt(std::string name);
 				/**
-					DataEntry of type integer
+					DataEntry of type int32_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryInt(std::string name, int minValue, int maxValue);
+				DataEntryInt(std::string name, int32_t minValue, int32_t maxValue);
 				/**
-					DataEntry of type integer
+					DataEntry of type int32_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryInt(std::string name, int value);
+				DataEntryInt(std::string name, int32_t value);
 				virtual ~DataEntryInt();
 
 				/**
@@ -52,7 +54,7 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(int value);
+				bool setValue(int32_t value);
 				/**
 					Gets the value.
 
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				int _minValue;
-				int _maxValue;
+				int32_t _minValue;
+				int32_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

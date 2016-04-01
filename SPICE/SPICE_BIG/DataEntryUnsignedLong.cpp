@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for type unsigned long integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryUnsignedLong.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedLong::DataEntryUnsignedLong(std::string name, unsigned long minValue, unsigned long maxValue) : DataEntry(name),
+			DataEntryUnsignedLong::DataEntryUnsignedLong(std::string name, uint64_t minValue, uint64_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryUnsignedLong::DataEntryUnsignedLong(std::string name, unsigned long value) : DataEntry(name),
+			DataEntryUnsignedLong::DataEntryUnsignedLong(std::string name, uint64_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryUnsignedLong::setValue(unsigned long value)
+			bool DataEntryUnsignedLong::setValue(uint64_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,9 +55,9 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			unsigned long DataEntryUnsignedLong::getValue()
+			uint64_t DataEntryUnsignedLong::getValue()
 			{
-				return std::stoul(_value);
+				return std::stoull(_value);
 			}
 			DataEntry::Types DataEntryUnsignedLong::getDataEntryType()
 			{
@@ -88,7 +88,7 @@ namespace SPICE
 				bool returnValue = true;
 				try
 				{
-					unsigned long tempValue = std::stoul(valueString);
+					uint64_t tempValue = std::stoull(valueString);
 					if(_minMaxSetted)
 					{
 						if(tempValue < _minValue || tempValue > _maxValue)

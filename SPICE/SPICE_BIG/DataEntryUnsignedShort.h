@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type unsigned short
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYUNSIGNEDSHORT_H
 #define DATAENTRYUNSIGNEDSHORT_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type unsigned short integer
+					DataEntry of type uint16_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryUnsignedShort(std::string name);
 				/**
-					DataEntry of type unsigned short integer
+					DataEntry of type uint16_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryUnsignedShort(std::string name, unsigned short minValue, unsigned short maxValue);
+				DataEntryUnsignedShort(std::string name, uint16_t minValue, uint16_t maxValue);
 				/**
-					DataEntry of type unsigned short integer
+					DataEntry of type uint16_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryUnsignedShort(std::string name, unsigned short value);
+				DataEntryUnsignedShort(std::string name, uint16_t value);
 				virtual ~DataEntryUnsignedShort();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(unsigned short value);
+				bool setValue(uint16_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				unsigned short getValue();
+				uint16_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				unsigned short _minValue;
-				unsigned short _maxValue;
+				uint16_t _minValue;
+				uint16_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

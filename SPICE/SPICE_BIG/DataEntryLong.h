@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type long integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYLONG_H
 #define DATAENTRYLONG_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type long integer
+					DataEntry of type int64_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryLong(std::string name);
 				/**
-					DataEntry of type long integer
+					DataEntry of type int64_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryLong(std::string name, long minValue, long maxValue);
+				DataEntryLong(std::string name, int64_t minValue, int64_t maxValue);
 				/**
-					DataEntry of type long integer
+					DataEntry of type int64_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryLong(std::string name, long value);
+				DataEntryLong(std::string name, int64_t value);
 				virtual ~DataEntryLong();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(long value);
+				bool setValue(int64_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				long getValue();
+				int64_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				long _minValue;
-				long _maxValue;
+				int64_t _minValue;
+				int64_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}

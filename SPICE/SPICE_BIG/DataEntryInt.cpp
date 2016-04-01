@@ -4,7 +4,7 @@
 	Purpose: Class to provide a data entry for integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #include "DataEntryInt.h"
@@ -22,14 +22,14 @@ namespace SPICE
 			{
 				_value = "0";
 			}
-			DataEntryInt::DataEntryInt(std::string name, int minValue, int maxValue) : DataEntry(name),
+			DataEntryInt::DataEntryInt(std::string name, int32_t minValue, int32_t maxValue) : DataEntry(name),
 				_minValue(minValue),
 				_maxValue(maxValue),
 				_minMaxSetted(true)
 			{
 				_value = "0";
 			}
-			DataEntryInt::DataEntryInt(std::string name, int value) : DataEntry(name),
+			DataEntryInt::DataEntryInt(std::string name, int32_t value) : DataEntry(name),
 				_minValue(0),
 				_maxValue(0),
 				_minMaxSetted(false)
@@ -42,7 +42,7 @@ namespace SPICE
 			{
 			}
 
-			bool DataEntryInt::setValue(int value)
+			bool DataEntryInt::setValue(int32_t value)
 			{
 				if(_minMaxSetted)
 				{
@@ -55,7 +55,7 @@ namespace SPICE
 				_valueIsSet = true;
 				return true;
 			}
-			int DataEntryInt::getValue()
+			int32_t DataEntryInt::getValue()
 			{
 				return std::stoi(_value);
 			}

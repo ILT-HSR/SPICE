@@ -4,11 +4,13 @@
 	Purpose: Class to provide a data entry for type unsigned integer
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_04_01
 */
 
 #ifndef DATAENTRYUNSIGNEDINT_H
 #define DATAENTRYUNSIGNEDINT_H
+
+#include <stdint.h>
 
 #include "DataEntry.h"
 
@@ -23,26 +25,26 @@ namespace SPICE
 				// Methoden
 			public:
 				/**
-					DataEntry of type unsigned integer
+					DataEntry of type uint32_t
 
 					@param name Name of the DataEntry
 				*/
 				DataEntryUnsignedInt(std::string name);
 				/**
-					DataEntry of type unsigned integer
+					DataEntry of type uint32_t
 
 					@param name Name of the DataEntry
 					@param minValue The minimum value for the type
 					@param maxValue The maximum value for the type
 				*/
-				DataEntryUnsignedInt(std::string name, unsigned int minValue, unsigned int maxValue);
+				DataEntryUnsignedInt(std::string name, uint32_t minValue, uint32_t maxValue);
 				/**
-					DataEntry of type unsigned integer
+					DataEntry of type uint32_t
 
 					@param name Name of the DataEntry
 					@param value Sets the given value. Flag "IsSet" will be set to TRUE.
 				*/
-				DataEntryUnsignedInt(std::string name, unsigned int value);
+				DataEntryUnsignedInt(std::string name, uint32_t value);
 				virtual ~DataEntryUnsignedInt();
 
 				/**
@@ -52,13 +54,13 @@ namespace SPICE
 					@param value The new value
 					@return True if the value could be set. (limits ok)
 				*/
-				bool setValue(unsigned int value);
+				bool setValue(uint32_t value);
 				/**
 					Gets the value.
 
 					@return Current value. If value is not set the inital value will be returned.
 				*/
-				unsigned int getValue();
+				uint32_t getValue();
 
 				/**
 					Gets the type of the DataEntry.
@@ -94,8 +96,8 @@ namespace SPICE
 				*/
 				virtual bool checkStringIsValidValue(std::string& valueString);
 
-				unsigned int _minValue;
-				unsigned int _maxValue;
+				uint32_t _minValue;
+				uint32_t _maxValue;
 				bool _minMaxSetted;
 			};
 		}
