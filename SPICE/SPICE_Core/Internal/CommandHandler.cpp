@@ -458,7 +458,7 @@ namespace SPICE
 					strout << "<" << silaNSPrefix << "DeviceManufacturer>http://ilt.hsr.ch / " << deviceManufacturer << "</" << silaNSPrefix << "DeviceManufacturer>";
 					strout << "<" << silaNSPrefix << "DeviceName>SPICE / " << deviceName << "</" << silaNSPrefix << "DeviceName>";
 					strout << "<" << silaNSPrefix << "DeviceSerialNumber>" << _coreData->getSerialNumber() << " / " << deviceSerialNumber << "</" << silaNSPrefix << "DeviceSerialNumber>";
-					strout << "<" << silaNSPrefix << "DeviceFirmwareVersion>v1.0.2 (20160129) / " << deviceFirmwareVersion << "</" << silaNSPrefix << "DeviceFirmwareVersion>";
+					strout << "<" << silaNSPrefix << "DeviceFirmwareVersion>v1.0.3 (20160406) / " << deviceFirmwareVersion << "</" << silaNSPrefix << "DeviceFirmwareVersion>";
 				}
 				else
 				{

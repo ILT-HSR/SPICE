@@ -160,6 +160,10 @@ namespace SPICE
 					{
 						stroutDescription << " defaultValue=\"" << defaultValue << "\"";
 					}
+					if(i->get()->getDataEntryType() == BIG::DataEntry::Types::Duration)
+					{
+						stroutDescription << " xsi:type=\"Duration\"";
+					}
 					stroutDescription << ">" << i->get()->getDescription() << "</Parameter>" << std::endl;
 				}
 				stroutDescription << "<Response xsi:type=\"standardResponse\" parameterSetCount=\"";
