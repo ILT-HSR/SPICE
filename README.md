@@ -95,4 +95,6 @@ SPICE 1.0 implements the SiLA DCDIS 1.3.08 specification.
 * Better / easier ResponseData generation.
 * General logging system
 
-
+## Public available SPIs (Service Provider Implementations)
+* [SPI_Multidrop](https://github.com/LukasMuellerILT/SPI_Multidrop)
+* [SPI_DeviceSimulator](https://github.com/LukasMuellerILT/SPI_DeviceSimulator)
