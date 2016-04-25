@@ -1,7 +1,7 @@
 // SPITemplate.cpp : Definiert den Einstiegspunkt für die Konsolenanwendung.
 //
 
-#ifdef LINUX
+#ifdef __linux__
 #include <unistd.h>
 #else
 #include "stdafx.h"
@@ -14,7 +14,7 @@
 #include "EthernetServer.h"
 #include "ResourceProvider.h"
 
-#ifdef LINUX
+#ifdef __linux__
 int main()
 {
     if(true)

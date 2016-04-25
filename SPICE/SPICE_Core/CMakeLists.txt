@@ -12,3 +12,6 @@ set_target_properties( "${LIBNAME}"
     
 target_include_directories( "${LIBNAME}" PUBLIC ${CMAKE_SOURCE_DIR}/SPICE_BIG)
 target_link_libraries( "${LIBNAME}" SPICE_BIG)
+
+install(TARGETS "${LIBNAME}" DESTINATION lib)
+install(DIRECTORY ./ DESTINATION include/SPICE FILES_MATCHING PATTERN "*.h")
