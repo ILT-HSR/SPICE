@@ -11,7 +11,7 @@
 
 #include <sstream>
 
-#ifdef LINUX
+#ifdef __linux__
 #include <stdlib.h>
 #endif
 
@@ -24,7 +24,7 @@ namespace SPICE
 		void GeneralFunctions::getLocaltimeInfo(const time_t& time, struct tm& timeinfo)
 		{
 			std::lock_guard<std::mutex> lockGuard(_timeConverterMutex);
-#ifdef LINUX
+#ifdef __linux__
 			struct tm* localTime = localtime(&time); // TODO: check if time is correct
 			timeinfo = *localTime;
 	//		delete localTime;
@@ -35,7 +35,7 @@ namespace SPICE
 		void GeneralFunctions::getUTCtimeInfo(const time_t& time, struct tm& timeinfo)
 		{
 			std::lock_guard<std::mutex> lockGuard(_timeConverterMutex);
-#ifdef LINUX
+#ifdef __linux__
 			struct tm* utcTime = gmtime(&time); // TODO: check if time is correct
 			timeinfo = *utcTime;
 	//		delete utcTime;
@@ -56,7 +56,7 @@ namespace SPICE
 
 		void GeneralFunctions::wroteFileToDisk()
 		{
-#ifdef LINUX
+#ifdef __linux__
 			std::string command = "sync";
 			std::system(&command[0]);
 #endif // LINUX

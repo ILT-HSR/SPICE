@@ -2,11 +2,6 @@ project(SPICE CXX C)
 cmake_minimum_required(VERSION 3.0.0)
 set (CMAKE_VERBOSE_MAKEFILE on)
 
-# The cmake file have been tested only with MinGW compiler yet
-if (NOT MINGW)
-    message( FATAL_ERROR "SPICE CMake build has been tested only with MINGW yet. CMake will exit." )
-endif ()
-
 
 # Append our module directory to CMake
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -26,8 +21,11 @@ if (CMAKE_BUILD_TYPE STREQUAL "")
     set( CMAKE_BUILD_TYPE "RelWithDebInfo" )
 endif ()
 
-# For Debug build types, append a "d" to the library names.
+
+# For Debug build types, append a "d" to the library names for Windows
+if (NOT MINGW)
 set(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "Set debug library postfix" FORCE)
+endif ()
 
 if(SPICE_STATIC)
     set( LIB_MODE STATIC )

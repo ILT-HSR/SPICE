@@ -9,3 +9,7 @@ set_target_properties( "${LIBNAME}"
     OUTPUT_NAME ${LIBNAME}
     COMPILE_FLAGS "-std=c++11"
     )
+
+install(TARGETS "${LIBNAME}" DESTINATION lib)
+install(DIRECTORY ./ DESTINATION include/SPICE FILES_MATCHING PATTERN "*.h")
+
