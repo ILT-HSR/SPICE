@@ -4,7 +4,7 @@
 	Purpose: ServerClass for WebService-Discovery using POCO. Listening for Multicast on Port 3702, checking for ethernet interface changes and trigger corresponding messages.
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_05_20
 */
 
 #include "WSDServer.h"
@@ -113,9 +113,6 @@ namespace SPICE
 						incomingMessage.append(buffer, receivedCount);
 						bool sendAnswer = false;
 						std::string answerMessage = "";
-#ifdef WSDISCOVERY_DEBUG
-									std::cout << "WSDiscovery: Handle incoming message" << std::endl;
-#endif
 						_wsDiscoveryCallback->handleIncomingMulticastMessage(incomingMessage, sendAnswer, answerMessage);
 
 						if(sendAnswer)
@@ -144,11 +141,17 @@ namespace SPICE
 									answerMessage.replace(answerMessage.find(addressTemplate), addressTemplate.length(), replaceAddress);
 								}
 #ifdef WSDISCOVERY_DEBUG
-								std::cout << "WSDiscovery: Send answer" << std::endl;
+								std::cout << "WSDiscovery: Handle incoming message - Send answer" << std::endl;
 #endif
 								_listeningSocket.sendTo(&answerMessage[0], answerMessage.length(), sender);
 							}
 						}
+#ifdef WSDISCOVERY_DEBUG
+						else
+						{
+							std::cout << "WSDiscovery: Handle incoming message - Don't send answer" << std::endl;
+						}
+#endif
 					}
 					catch (std::exception e)
 					{
@@ -223,16 +226,20 @@ namespace SPICE
 					// remove lost interfaces
 					while(_detectedInterfacesAndIPs.size() > currentInterfaces.size())
 					{
-						for(std::map<std::string, std::string>::iterator i = _detectedInterfacesAndIPs.begin(); i != _detectedInterfacesAndIPs.end(); i++)
+						std::list<std::map<std::string, std::string>::iterator> deleteList;
+						for(std::map<std::string, std::string>::iterator i = _detectedInterfacesAndIPs.begin(); i != _detectedInterfacesAndIPs.end(); ++i)
 						{
 							if(std::find(currentInterfaces.begin(), currentInterfaces.end(), i->first) == currentInterfaces.end())
 							{
 #ifdef WSDISCOVERY_DEBUG
 								std::cout << "WSDiscovery: Lost interface: " << i->first << std::endl;
 #endif
-								_detectedInterfacesAndIPs.erase(i);
-								i = _detectedInterfacesAndIPs.end();
+								deleteList.push_back(i);
 							}
+						}
+						for(auto i : deleteList)
+						{
+							_detectedInterfacesAndIPs.erase(i);
 						}
 					}
 
@@ -251,17 +258,26 @@ namespace SPICE
 
 				// prepare socket
 				Poco::Net::SocketAddress destAddress("239.255.255.250", 3702);
-				Poco::Net::MulticastSocket ms;
-				ms.setInterface(networkInterface);
+				Poco::Net::SocketAddress bindingAddress(networkInterface.address().toString(), 3702);
+				try
+				{
+					Poco::Net::MulticastSocket ms = Poco::Net::MulticastSocket(bindingAddress, true);
 
-				// send
-				ms.sendTo(&message[0], message.length(), destAddress);
+					// send
+					ms.sendTo(&message[0], message.length(), destAddress);
 #ifdef WSDISCOVERY_DEBUG
-				std::cout << "WSDiscovery: Send message to interface: " << networkInterface.name() << std::endl;
+					std::cout << "WSDiscovery: Send message to interface: " << networkInterface.name() << std::endl;
 #endif
 
-				// close
-				ms.close();
+					// close
+					ms.close();
+				}
+				catch (std::exception exp)
+				{
+#ifdef WSDISCOVERY_DEBUG
+					std::cout << "WSDiscovery: Exception at sendMulticastMessage: " << exp.what() << " - NetworkInterface: " <<  networkInterface.name() << std::endl;
+#endif
+				}
 			}
 
 			std::string WSDServer::getReplaceAddress(std::string ipAddress)
