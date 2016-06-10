@@ -4,7 +4,7 @@
 	Purpose: Class as central coordinator of incoming, waiting, active and ending commands
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.3 2016_06_10
 */
 
 #ifndef COMMANDHANDLER_H
