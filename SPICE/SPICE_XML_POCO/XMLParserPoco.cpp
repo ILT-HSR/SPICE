@@ -4,7 +4,7 @@
 	Purpose: Interface to provide XML functionalities to the core
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_06_10
 */
 
 #include "XMLParserPoco.h"
@@ -68,7 +68,7 @@ namespace SPICE
 
 			bool XMLParserPoco::selectElementByNameAndNS(std::string name, std::string xmlNamespace)
 			{
-				if(_documentLoaded)
+				if(_documentLoaded && name != "" && xmlNamespace != "")
 				{
 					Poco::AutoPtr<Poco::XML::NodeList> nodeList = _document->getElementsByTagNameNS(xmlNamespace, name);
 
@@ -83,13 +83,13 @@ namespace SPICE
 			}
 			bool XMLParserPoco::selectChildByNameAndNS(std::string name, std::string xmlNamespace)
 			{
-				if(_documentLoaded && _selectedNode != nullptr)
+				if(_documentLoaded && _selectedNode != nullptr && name != "" && xmlNamespace != "")
 				{
 					Poco::AutoPtr<Poco::XML::NodeList> childNodeList = _selectedNode->childNodes();
 
 					for(unsigned long i = 0; i < childNodeList->length(); i++)
 					{
-						if(childNodeList->item(i)->localName() == name && childNodeList->item(i)->namespaceURI() == xmlNamespace)
+						if(childNodeList->item(i)->localName() == name && childNodeList->item(i)->namespaceURI() == xmlNamespace && childNodeList->item(i)->nodeType == Poco::XML::Node::ELEMENT_NODE)
 						{
 							_selectedNode = childNodeList->item(i);
 							return true;
@@ -100,13 +100,13 @@ namespace SPICE
 			}
 			bool XMLParserPoco::selectChildByName(std::string name)
 			{
-				if(_documentLoaded && _selectedNode != nullptr)
+				if(_documentLoaded && _selectedNode != nullptr && name != "")
 				{
 					Poco::AutoPtr<Poco::XML::NodeList> childNodeList = _selectedNode->childNodes();
 
 					for(unsigned long i = 0; i < childNodeList->length(); i++)
 					{
-						if(childNodeList->item(i)->localName() == name)
+						if(childNodeList->item(i)->localName() == name && childNodeList->item(i)->nodeType == Poco::XML::Node::ELEMENT_NODE)
 						{
 							_selectedNode = childNodeList->item(i);
 							return true;
@@ -134,7 +134,7 @@ namespace SPICE
 			}
 			std::string XMLParserPoco::getChildElementInnerText(std::string name)
 			{
-				if(_documentLoaded && _selectedNode != nullptr)
+				if(_documentLoaded && _selectedNode != nullptr && name != "")
 				{
 					if(selectChildByName(name))
 					{
@@ -154,7 +154,10 @@ namespace SPICE
 
 					for(unsigned long i = 0; i < childNodeList->length(); i++)
 					{
-						childElements.push_back(childNodeList->item(i)->localName());
+						if(childNodeList->item(1)->nodeType == Poco::XML::Node::ELEMENT_NODE && childNodeList->item(1)->localName() != "")
+						{
+							childElements.push_back(childNodeList->item(i)->localName());
+						}
 					}
 				}
 				return childElements;

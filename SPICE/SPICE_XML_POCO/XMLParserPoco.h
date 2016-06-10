@@ -4,7 +4,7 @@
 	Purpose: Poco-Implementation of the xml parser interface to provide XML functionalities to the core
 
 	@author Lukas Mueller (ilt.hsr.ch)
-	@version 1.0 2015_10_21
+	@version 1.1 2016_06_10
 */
 
 #ifndef XMLPARSERPOCO_H

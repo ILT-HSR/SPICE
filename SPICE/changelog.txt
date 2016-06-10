@@ -1,5 +1,8 @@
 SPICE Changelog
 
+--- 1.0.5 --- 2016_06_10
+- BugFix - Fixing Poco-XML-Parser, adding node type inspection for child-elements, prefent empty element names
+
 --- 1.0.4 --- 2016_05_25
 - BugFix - Fixing WSDiscovery exception problems with POCO 1.7.x-Versions
 - BugFix - Fixing WSDiscovery leaving interfaces generate exceptions
