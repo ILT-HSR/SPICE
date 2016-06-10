@@ -154,7 +154,7 @@ namespace SPICE
 
 					for(unsigned long i = 0; i < childNodeList->length(); i++)
 					{
-						if(childNodeList->item(1)->nodeType() == Poco::XML::Node::ELEMENT_NODE && childNodeList->item(1)->localName() != "")
+						if(childNodeList->item(i)->nodeType() == Poco::XML::Node::ELEMENT_NODE && childNodeList->item(i)->localName() != "")
 						{
 							childElements.push_back(childNodeList->item(i)->localName());
 						}
