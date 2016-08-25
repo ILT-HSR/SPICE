@@ -14,6 +14,12 @@
 #include "EthernetServer.h"
 #include "ResourceProvider.h"
 
+// Flag used to force cleanup of connected device on exit.
+bool cleanup = false;
+
+// Setup the port we should listen on... default to 8080.
+int port = 8080;
+
 #ifdef __linux__
 int main()
 {
@@ -33,9 +39,40 @@ int main()
         }
     }
 #else
-int _tmain()
+
+BOOL ctrl_handler(DWORD event)
 {
+	if (event == CTRL_CLOSE_EVENT) {
+		cleanup = true;
+		while (cleanup)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		}
+		return TRUE;
+	}
+	return FALSE;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	// Hook shutdown event
+	SetConsoleCtrlHandler((PHANDLER_ROUTINE)(ctrl_handler), TRUE);
+
+	// Grab command line arguments, we only use them to set the TCP Port
+	// First arg is the path, second should be the port.
+	if (argc == 2)
+	{
+		// Only override the default if the value of 
+		// the second command line arg evaluates to something other than zero
+		int var = _ttoi(argv[1]);
+		if (var > 0)
+		{
+			port = var;
+		}
+	}
+
 #endif
+	
 	// Create resource provider
 	std::shared_ptr<SPI::Template::ResourceProvider> resourceProvider(new SPI::Template::ResourceProvider());
 
@@ -48,7 +85,7 @@ int _tmain()
 	// Create and start an EthernetServer
 	std::cout << "Starting EthernetServer... " << std::flush;
 	std::shared_ptr<SPICE::ES::POCO::EthernetServer> ethernetServer(new SPICE::ES::POCO::EthernetServer());
-	if(ethernetServer->startServer() != 0)
+	if(ethernetServer->startServer(port) != 0)
 	{
 		std::cout << "fail" << std::endl;
 		std::cerr << "EthernetServer could not be started successfully" << std::endl;
@@ -70,6 +107,17 @@ int _tmain()
 
 	while(true)
 	{
+		// Check to see if we are exiting...
+		if (cleanup)
+		{
+			// Perform any cleanup/disconnect here...
+			// ...
+			// ...
+
+			// Clear the cleanup flag to continue
+			cleanup = false;
+		}
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	}
 
