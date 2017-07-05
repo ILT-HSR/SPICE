@@ -1,6 +1,7 @@
-** No further development of SPICE **
-- Cause of SiLA 2 -> Much easier standard. Should not need a base-library like SPICE anymore. This makes SPICE obsolete.
+**No further development of SPICE**
+- Cause of SiLA 2 -> Much easier standard. Should not need a base-library like SPICE anymore. This makes SPICE obsolet.
 - Keeping SPICE on GitHub, cause it's still a very good and stable base-library for SiLA 1.3.08
+
 
 # ![SPICE Logo](/SPICE_Logos/SPICE_064.png) SPICE
 SPICE stands for **S**iLA **P**rovider **I**mplementation **C**ommunity **E**quipment.
