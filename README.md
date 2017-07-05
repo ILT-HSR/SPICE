@@ -1,3 +1,7 @@
+** No further development of SPICE **
+- Cause of SiLA 2 -> Much easier standard. Should not need a base-library like SPICE anymore. This makes SPICE obsolete.
+- Keeping SPICE on GitHub, cause it's still a very good and stable base-library for SiLA 1.3.08
+
 # ![SPICE Logo](/SPICE_Logos/SPICE_064.png) SPICE
 SPICE stands for **S**iLA **P**rovider **I**mplementation **C**ommunity **E**quipment.
 
@@ -10,12 +14,11 @@ An implementation based on SPICE is called a SPI (**S**iLA **P**rovider **I**mpl
 
 SPICE was developed by the *ILT Institute for Lab Automation and Mechatronics* in Rapperswil (Switzerland). It was commissioned by *Actelion Pharmaceuticals Ltd.* in Allschwil (Switzerland), and it is made freely available to the lab automation community through GitHub.
 
-If there is sufficient interest in SPICE, it will be updated to future SiLA DCDIS / DCIS versions.
-
 ##History
 * 2014.10 - It was initially developed to make Multidrop dispensers SiLA compatible (all historic versions up to the Multidrop Combi)
 * 2015.09 - A software structure redesign was done, to get more flexibility with the core part of the SiLA interface. SPICE was born.
 * 2015.11 - Publication of SPICE on GitHub
+* 2017.07 - Decision: No further development of SPICE
 
 ## License
 SPICE is provided under the Boost Software License. SPICE is not and has no intention to be part of the Boost
@@ -88,13 +91,13 @@ SPICE 1.0 implements the SiLA DCDIS 1.3.08 specification.
 * DataEvent generation
 * Special DataTypes
 
-## Possible features in future
-* Additional EthernetServer and XMLParser implementations based on other libraries to get a choice.
-* EthernetServer with HTTPS-support.
-* Optional extension field to error events.
-* Better / easier ResponseData generation.
-* General logging system
+## Possible features in future - obsolete
+> * Additional EthernetServer and XMLParser implementations based on other libraries to get a choice.
+> * EthernetServer with HTTPS-support.
+> * Optional extension field to error events.
+> * Better / easier ResponseData generation.
+> * General logging system
 
 ## Public available SPIs (Service Provider Implementations)
-* [SPI_Multidrop](https://github.com/LukasMuellerILT/SPI_Multidrop)
-* [SPI_DeviceSimulator](https://github.com/LukasMuellerILT/SPI_DeviceSimulator)
+* [SPI_Multidrop](https://github.com/ILT-HSR/SPI_Multidrop)
+* [SPI_DeviceSimulator](https://github.com/ILT-HSR/SPI_DeviceSimulator)
